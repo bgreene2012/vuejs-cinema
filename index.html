@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <style>
         [v-cloak] {
-            display: none !important;
+            display: none !important; 
         }
     </style>
 </head>
@@ -18,7 +18,14 @@
         <img src="/public/logo.png">
         <h1>Vue.js Cinema</h1>
     </div>
+    <div id="overview">
+        <div class="main">
+            <movie-list v-bind:genre="genre" v-bind:time="time"></movie-list> 
+            <movie-filter v-on:check-filter="checkFilter"></movie-filter> 
+        </div>
+    </div>
 </div>
 <script src="/dist/build.js"></script>
+
 </body>
 </html>
