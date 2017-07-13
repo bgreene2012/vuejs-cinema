@@ -1,9 +1,14 @@
 <template>
-    <div>
+    <div class="movie">
         <div class="movie-col-left">
-            <img src="" alt=""></img>
+            <img v-bind:src="movie.Poster" alt=""></img>
         </div>
-        <div></div>
+        <div class="movie-col-right">
+            <div class="movie-title">
+                <h2>{{ movie.Title }}</h2>
+                <span class="movie-rating">{{ movie.Rated }}</span>
+            </div>
+        </div>
     </div>
 </template>
 <script>
