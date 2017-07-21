@@ -16,7 +16,6 @@
 <script>
     import genres from '../util/genres';
     import times from '../util/times';
-    import CheckFilter from './CheckFilter.vue';
 
     export default {
         data() {
@@ -27,7 +26,7 @@
         },
         methods: {
             checkFilter(category, title, checked) {
-                this.$emit('check-filter', category, title, checked);
+                this.$bus.$emit('check-filter', category, title, checked);
             }
         },
         components: {
