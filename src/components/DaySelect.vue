@@ -1,7 +1,7 @@
 <template>
     <div id="day-select">
         <ul class="days">
-            <li v-bind:class="{ day: true, active: isActive(day) }" v-for="day in days" @click="selected = day">
+            <li v-bind:class="{ day: true, active: isActive(day) }" v-for="day in days" @click="selectDay(day)">
                 {{ formatDay(day) }}
             </li>
         </ul>
@@ -30,6 +30,9 @@ export default {
       },
       isActive(day) {
           return day.isSame(this.selected, 'day');
+      }, 
+      selectDay(day) {
+          this.$bus.$emit('set-day', day);
       }
   }
 }
